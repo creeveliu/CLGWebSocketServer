@@ -114,7 +114,9 @@ app.get('/clients', function (req, res) {
     res.send(JSON.stringify(Object.keys(clients)));
 });
 
-
+app.get('/clientsCount', function (req, res) {
+    res.send("当前连接数" + wss.clients.length);
+});
 
 app.get('/client/:device_id', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
